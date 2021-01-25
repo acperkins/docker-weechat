@@ -1,6 +1,6 @@
-FROM registry.opensuse.org/opensuse/tumbleweed:latest
-RUN zypper install -y shadow weechat && \
-	zypper clean -a && \
+FROM fedora:latest
+RUN dnf --refresh install -y weechat && \
+	dnf clean all && \
 	useradd -c IRC -d /home/irc -m -U irc
 WORKDIR /home/irc
 COPY irc.conf .weechat/irc.conf
