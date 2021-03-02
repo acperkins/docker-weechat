@@ -1,5 +1,6 @@
-FROM debian:stable
+FROM debian:buster
 RUN apt-get update && \
+	apt-get upgrade -y && \
 	apt-get install -y weechat && \
 	apt-get clean && \
 	rm -fr /var/lib/apt/lists/* && \
